@@ -1,5 +1,6 @@
 
 # 🌟 Convolutional Autoencoders for Image Manifold Learning (MNIST & CelebA)
+<img width="1024" height="1024" alt="Gemini_Generated_Image_qbrn3iqbrn3iqbrn" src="https://github.com/user-attachments/assets/b352057a-675c-4978-90f0-47be6612d7f9" />
 
 This project explores the performance and latent space representations of **Convolutional Autoencoders (CAE)** by applying them to two distinct image datasets: the simple **MNIST** handwritten digits and the complex **CelebA** celebrity faces dataset.
 

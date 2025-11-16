@@ -1,67 +1,75 @@
-AutoEncoder Project — CelebA & MNIST Embedding Analysis
+🌟 AutoEncoder Project – CelebA & MNIST Embedding Analysis
 
-This repository contains two complete AutoEncoder experiments using PyTorch:
+This repository contains two full deep-learning experiments using Convolutional AutoEncoders (Conv-AE) implemented in PyTorch.
+The goal is to explore reconstruction quality, latent representations, and the effect of different embedding sizes across two datasets.
 
-CelebA AutoEncoder → Face dataset
-
-MNIST AutoEncoder → Handwritten digits
-
-Both experiments focus on latent space behavior, reconstruction quality, and embedding visualization using PCA, t-SNE, histograms, and latent-dimension interpolation GIFs.
-
-📁 Repository Structure
+📂 Repository Structure
 AutoEncoder_Project/
 │
 ├── CelebA/
 │     ├── CelebA_AutoEncoder_Report.pdf
 │     ├── celeba_autoencoder.ipynb
-│     ├── results/ (reconstructions, PCA, t-SNE, histograms)
-│     └── gifs/ (latent dimension interpolation)
+│     ├── results/
+│     └── gifs/
 │
 └── MNIST/
       ├── MNIST_AutoEncoder_Report.pdf
       ├── mnist_autoencoder.ipynb
-      ├── results/ (reconstructions, PCA, t-SNE, histograms)
-      └── gifs/ (latent dimension interpolation)
+      ├── results/
+      └── gifs/
 
-🎨 CelebA AutoEncoder
+🧠 1) CelebA AutoEncoder
 
-Input: 64×64 RGB faces
+AutoEncoder trained on the CelebA face dataset to learn compact embeddings and reconstruct facial images.
+Two embedding sizes were explored: 32 and 64 dimensions.
 
-Embedding Sizes Tested: 32, 64
+Key Features
 
-Outputs included:
+Dataset: CelebA
 
-Reconstruction results
+Model: Convolutional AutoEncoder (PyTorch)
 
-PCA & t-SNE latent visualizations
+Embedding sizes: 32, 64
+
+Outputs include:
+
+Training loss
+
+Reconstruction samples
+
+Latent space projections (PCA & t-SNE)
 
 Embedding histograms
 
-Latent dimension interpolation GIFs
+Latent-dimension interpolation
 
-Full report: CelebA_AutoEncoder_Report.pdf
+✏️ 2) MNIST AutoEncoder
 
-✏️ MNIST AutoEncoder
+AutoEncoder trained on MNIST handwritten digits dataset to investigate the effect of very small latent dimensions.
 
-Input: 28×28 grayscale digits
+Embedding sizes tested
 
-Embedding Sizes Tested: 2, 5, 10, 20
+2
 
-Outputs included:
+5
 
-Reconstruction images
+10
+
+20
+
+Outputs include
+
+Training loss curves
+
+Reconstructed digits
 
 PCA & t-SNE comparisons
 
-Latent space scatter plots
+Latent distributions
 
-Embedding histograms
+Interpolation GIFs
 
-GIF interpolation (size = 2)
-
-Full report: MNIST_AutoEncoder_Report.pdf
-
-⚙️ Technologies Used
+🛠️ Technologies Used
 
 PyTorch
 
@@ -71,10 +79,11 @@ Matplotlib
 
 PCA & t-SNE
 
-Conv AutoEncoder architecture
+Convolutional AutoEncoder
 
 CelebA & MNIST datasets
 
-👤 Author
+👩‍💻 Author
 
 Waad Alqahtani
+AI & Deep Learning • Saudi Arabia

@@ -1,89 +1,91 @@
-🌟 AutoEncoder Project – CelebA & MNIST Embedding Analysis
 
-This repository contains two full deep-learning experiments using Convolutional AutoEncoders (Conv-AE) implemented in PyTorch.
-The goal is to explore reconstruction quality, latent representations, and the effect of different embedding sizes across two datasets.
+# 🌟 Convolutional Autoencoders for Image Manifold Learning (MNIST & CelebA)
 
-📂 Repository Structure
-AutoEncoder_Project/
-│
-├── CelebA/
-│     ├── CelebA_AutoEncoder_Report.pdf
-│     ├── celeba_autoencoder.ipynb
-│     ├── results/
-│     └── gifs/
-│
-└── MNIST/
-      ├── MNIST_AutoEncoder_Report.pdf
-      ├── mnist_autoencoder.ipynb
-      ├── results/
-      └── gifs/
+This project explores the performance and latent space representations of **Convolutional Autoencoders (CAE)** by applying them to two distinct image datasets: the simple **MNIST** handwritten digits and the complex **CelebA** celebrity faces dataset.
 
-🧠 1) CelebA AutoEncoder
+The primary goal is to understand how the CAE model compresses images into a lower-dimensional latent space and how the quality of reconstruction and the structure of the latent space change with varying embedding sizes.
 
-AutoEncoder trained on the CelebA face dataset to learn compact embeddings and reconstruct facial images.
-Two embedding sizes were explored: 32 and 64 dimensions.
+---
 
-Key Features
+## 🚀 Key Features and Results
 
-Dataset: CelebA
+* **PyTorch Implementation:** Deep learning models (CAEs) implemented entirely in PyTorch for both encoder and decoder architectures.
+* **Multi-Dimensional Latent Space Analysis:** Models were trained and evaluated across various latent vector sizes to study the trade-offs:
+    * **MNIST:** Latent dimensions **2, 5, 10, 20**.
+    * **CelebA:** Latent dimensions **32, 64**.
+* **Latent Space Visualization:** The learned embeddings are visualized using both **Principal Component Analysis (PCA)** and **t-distributed Stochastic Neighbor Embedding (t-SNE)** to demonstrate the clustering and structure within the compressed space.
+* **Latent Interpolation (GIFs):** Code is included to generate GIF animations showing the smooth image transitions (interpolation) achieved by manipulating individual dimensions of the latent vector.
+* **Performance Metrics:** Detailed analysis of **Training Loss** curves and visualization of **Reconstructed Images** for each embedding size.
 
-Model: Convolutional AutoEncoder (PyTorch)
+---
 
-Embedding sizes: 32, 64
+## 📂 Project Structure
 
-Outputs include:
+| File Name | Description |
+| :--- | :--- |
+| `MINST_Conv_AutoEncoder_Pytorch.ipynb` | Jupyter Notebook for implementing, training, and testing the CAE on the **MNIST** dataset. Includes visualization code for reconstructed images and latent space. |
+| `waad _MNIST_AutoEncoder_Report.pdf` | Detailed analysis report on the MNIST autoencoder, covering loss plots, PCA/t-SNE visualizations, and reconstruction quality for embedding sizes **2, 5, 10, and 20**. |
+| `waad_Conv_AutoEncoder_Pytorch_CelebA.ipynb` | Jupyter Notebook for implementing, training, and testing the CAE on the **CelebA** dataset (requires downloading/accessing the dataset). |
+| `waad_AutoEncoder on CelebA.pdf` | Detailed analysis report on the CelebA autoencoder, including loss curves, latent space projections (PCA/t-SNE), and reconstructed face images for embedding sizes **32 and 64**. |
 
-Training loss
+---
 
-Reconstruction samples
+## 🛠️ Prerequisites and Installation
 
-Latent space projections (PCA & t-SNE)
+To run the notebooks and reproduce the results, you will need the following libraries installed:
 
-Embedding histograms
+* Python (3.x recommended)
+* `torch`
+* `torchvision` (for dataset loading and transformations)
+* `numpy`
+* `matplotlib`
+* `scikit-learn` (for PCA and t-SNE)
+* `imageio` (for generating GIF animations)
 
-Latent-dimension interpolation
+You can install the primary dependencies using pip:
 
-✏️ 2) MNIST AutoEncoder
+```bash
+pip install torch torchvision numpy matplotlib scikit-learn imageio
+````
 
-AutoEncoder trained on MNIST handwritten digits dataset to investigate the effect of very small latent dimensions.
+-----
 
-Embedding sizes tested
+## 🏃‍♂️ How to Run the Code
 
-2
+1.  **Clone the Repository:**
+    ```bash
+    git clone <Your Repository URL>
+    cd <repository-name>
+    ```
+2.  **Launch Jupyter:**
+    ```bash
+    jupyter notebook
+    ```
+3.  **Run the Notebooks:**
+      * For **MNIST** analysis: Open and execute the cells in `MINST_Conv_AutoEncoder_Pytorch.ipynb`. The MNIST dataset will be downloaded automatically by `torchvision`.
+      * For **CelebA** analysis: Open and execute the cells in `waad_Conv_AutoEncoder_Pytorch_CelebA.ipynb`. *Note: You may need to manually download or configure access to the CelebA dataset.*
+4.  **Review Reports:** The PDF reports (`.pdf` files) contain the summarized findings, visualizations, and conclusions from the experiments.
 
-5
+-----
 
-10
+## 📊 Key Insights from Analysis
 
-20
+### MNIST (Simple Data Manifold)
 
-Outputs include
+  * The latent space visualization (t-SNE) for the **2-dimensional** embedding size shows remarkable separation and distinct clustering of different digit classes (0-9), indicating the autoencoder effectively learned the core distinguishing features.
+  * Increasing the latent size to 10 or 20 significantly reduces the reconstruction loss, resulting in nearly perfect image fidelity, but the 2D space is the most interpretable for visualization.
 
-Training loss curves
+### CelebA (Complex Data Manifold)
 
-Reconstructed digits
+  * Due to the high dimensionality and complexity of face data, higher latent dimensions (**32 and 64**) were required.
+  * The training loss curves demonstrate consistent convergence, achieving high-quality facial reconstruction.
+  * Latent space interpolation GIFs show successful semantic transitions between face images, demonstrating that the autoencoder has captured meaningful features of the face manifold (e.g., changes in hair, expression, or background).
 
-PCA & t-SNE comparisons
+-----
 
-Latent distributions
+## 🖋️ Author
 
-Interpolation GIFs
+**WAAD ALQAHTANI** 
 
-🛠️ Technologies Used
-
-PyTorch
-
-NumPy
-
-Matplotlib
-
-PCA & t-SNE
-
-Convolutional AutoEncoder
-
-CelebA & MNIST datasets
-
-👩‍💻 Author
-
-Waad Alqahtani
-AI & Deep Learning • Saudi Arabia
+```
+```
